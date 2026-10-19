@@ -1,0 +1,29 @@
+{
+  "name": "@doc/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p . && vite build",
+    "preview": "vite preview",
+    "analyze": "vite build --mode analyze",
+    "build:cdn": "vite build --mode cdn",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@doc/ai-chat": "workspace:*",
+    "@doc/shared": "workspace:*",
+    "@doc/ui": "workspace:*",
+    "@doc/editor": "workspace:*",
+    "react-router-dom": "^7.18.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.0"
+  }
+}

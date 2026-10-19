@@ -1,0 +1,24 @@
+{
+  "name": "doc-platform",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.33.2",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "pnpm --filter @doc/web dev",
+    "dev:server": "cd server && go run ./cmd/server",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:server": "cd server && go test ./internal/...",
+    "analyze": "pnpm --filter @doc/web analyze"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@vitejs/plugin-react": "^6.1.1",
+    "rollup-plugin-visualizer": "^7.1.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.0"
+  }
+}

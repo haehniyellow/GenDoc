@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "api",
+      "runtimeExecutable": "D:/AAAjianlixiangmu/Doc/server/bin/server.exe",
+      "runtimeArgs": [],
+      "port": 8080
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "pnpm.cmd",
+      "runtimeArgs": ["--filter", "@doc/web", "dev"],
+      "port": 5173
+    }
+  ]
+}

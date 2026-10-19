@@ -1,0 +1,225 @@
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+a.btn,
+.doc-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 文档列表 */
+.list-main {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+.list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  display: grid;
+  gap: 8px;
+}
+.doc-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding-right: 8px;
+}
+.doc-list li:hover {
+  background: var(--bg-subtle);
+}
+.doc-link {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+}
+.doc-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.tag {
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+}
+
+/* 文档页 */
+.title-input {
+  flex: 0 1 360px;
+  min-width: 120px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+}
+.title-input:hover,
+.title-input:focus {
+  border-color: var(--border);
+  outline: none;
+}
+.save-state {
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+.save-state.error {
+  color: var(--danger);
+}
+.share {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+.doc-layout {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+.doc-main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  background: var(--bg-subtle);
+}
+.doc-paper {
+  max-width: 860px;
+  margin: 16px auto;
+  padding: 0 40px;
+  min-height: calc(100% - 32px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+.ai-side {
+  width: 420px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--border);
+  min-height: 0;
+}
+
+@media (max-width: 900px) {
+  .ai-side {
+    position: fixed;
+    inset: 49px 0 0 auto;
+    width: min(100%, 420px);
+    z-index: 20;
+    background: var(--bg);
+    box-shadow: var(--shadow);
+  }
+  .doc-paper {
+    padding: 0 16px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+/* 站点布局（文档列表页 / AI 对话页共用） */
+.brand {
+  margin-right: 4px;
+}
+.nav {
+  display: flex;
+  gap: 2px;
+}
+.nav a {
+  padding: 4px 12px;
+  border-radius: 6px;
+  color: var(--fg-muted);
+  text-decoration: none;
+}
+.nav a:hover {
+  background: var(--bg-hover);
+}
+.nav a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+.page-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.page-body > .list-main {
+  flex: 1;
+  min-height: 0;
+}
+.chat-page {
+  flex: 1;
+  min-height: 0;
+}
+
+/* 插入文档对话框 */
+.dialog-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 16px;
+}
+.dialog {
+  width: 100%;
+  max-width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 4px;
+}
+.dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.dialog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.dialog-list .btn {
+  width: 100%;
+  justify-content: flex-start;
+}

@@ -1,0 +1,12 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+
+# widget-runtime 以别名安装了 react18 / react-dom18，只取其中的 UMD 构建文件内联进沙箱 iframe，
+# 从不在 Node / 宿主里运行它们；react-dom 18 声明的 react@^18 peer 依赖对此无意义，忽略即可。
+peerDependencyRules:
+  ignoreMissing:
+    - react
+  allowedVersions:
+    react-dom: "18 || 19"
+    react: "18 || 19"
